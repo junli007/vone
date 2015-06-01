@@ -1,0 +1,20 @@
+{
+  "result":"OK",
+  "messageCode":"",
+  "message":"",
+  "messageType":0,
+  "formValidateList":null,
+  "resultInfo":
+  {
+    "companyList":
+    [
+      {"companyId":1,"companyName":"VoyageOne"},
+      {"companyId":51,"companyName":"Spalding"},
+      {"companyId":2,"companyName":"OneStop"}
+    ],
+    "selCompanyId":1
+  },
+  "permissions":null,
+  "forward":"",
+  "token":""
+}

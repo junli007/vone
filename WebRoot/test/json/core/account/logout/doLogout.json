@@ -1,0 +1,10 @@
+{
+  "result":"OK",
+  "messageType": 0,
+  "message":"",
+  "formValidateList":[],
+  "permissions":[],
+  "resultInfo":{},
+  "forward":"/core/account/login",
+  "token":""
+}

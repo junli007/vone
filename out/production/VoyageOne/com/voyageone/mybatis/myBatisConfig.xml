@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+	
+<configuration>
+	<settings>
+		<setting name="lazyLoadingEnabled" value="true" />
+		<setting name="defaultStatementTimeout" value="20000" />
+	</settings>
+	
+	<typeAliases>
+		<!-- core bean -->
+		<typeAlias alias="core.InFormUser" type="com.voyageone.core.formbean.InFormUser" />
+		<typeAlias alias="core.ExceptionLogBean" type="com.voyageone.core.modelbean.ExceptionLogBean" />
+		<typeAlias alias="core.MessageInfoBean" type="com.voyageone.core.modelbean.MessageInfoBean" />
+		<typeAlias alias="core.MasterInfoBean" type="com.voyageone.core.modelbean.MasterInfoBean" />
+		
+	</typeAliases>
+</configuration>

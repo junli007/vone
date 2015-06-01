@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:mvc="http://www.springframework.org/schema/mvc"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+     http://www.springframework.org/schema/beans/spring-beans-3.2.xsd  
+     http://www.springframework.org/schema/context  
+     http://www.springframework.org/schema/context/spring-context-3.2.xsd  
+     http://www.springframework.org/schema/mvc  
+     http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+    
+    <!-- 静态资源 -->
+    <mvc:default-servlet-handler />
+    
+    <!-- 默认的注解映射的支持 -->
+    <mvc:annotation-driven />
+    
+    <!-- 自动扫描包 -->
+    <context:component-scan
+        base-package="com.voyageone.core.controller" />
+    
+    <!-- 配置mvc的拦截器 可以配置多个  -->
+    <mvc:interceptors>
+        <!-- 共通检查及处理拦截器 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/*/*/*/*" />
+            <!-- 例外 -->
+            <mvc:exclude-mapping path="/**/*.js" />
+            <mvc:exclude-mapping path="/**/*.css" />
+            <mvc:exclude-mapping path="/**/*.html" />
+            <mvc:exclude-mapping path="/**/*.gif" />
+            <mvc:exclude-mapping path="/**/*.jpg" />
+            <mvc:exclude-mapping path="/**/*.png" />
+            <mvc:exclude-mapping path="/**/*.map" />
+            <mvc:exclude-mapping path="/**/*.less" />
+            <mvc:exclude-mapping path="/core/account/login/doLogin" />
+            <bean class="com.voyageone.core.interceptor.CommonHandleInterceptor" />
+        </mvc:interceptor>
+        
+        <!-- 业务处理controller开始结束日志拦截器 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/*/*/*/*" />
+            <!-- 例外 -->
+            <mvc:exclude-mapping path="/**/*.js" />
+            <mvc:exclude-mapping path="/**/*.css" />
+            <mvc:exclude-mapping path="/**/*.html" />
+            <mvc:exclude-mapping path="/**/*.gif" />
+            <mvc:exclude-mapping path="/**/*.jpg" />
+            <mvc:exclude-mapping path="/**/*.png" />
+            <mvc:exclude-mapping path="/**/*.map" />
+            <mvc:exclude-mapping path="/**/*.less" />
+            <bean class="com.voyageone.core.interceptor.LogInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
+</beans>
